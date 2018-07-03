@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="../static/css/build.css"/>
+    <meta charset="utf-8">
+
+</head>
+<header class="transition" id="top" role="banner">
+    <div class="container">
+        <div class="navbar-header transition">
+            <a title="首页" href="/">
+                <img title="首页" alt="虎嗅网" src="https://static.huxiucdn.com/www/image/logo/logo.jpg">
+            </a>
+        </div>
+        <ul class="nav navbar-nav navbar-left">
+            {% for item in catalog_list %}
+            <li class="nav-news"><a class="js-nav-24" href="" target="_blank">{{ item }}</a></li>
+            {% endfor %}
+             </ul>
+
+        <ul class="nav navbar-nav navbar-right transition ">
+
+            <li class="login-link-box"><a class="js-login" onclick="show_login_frm()">登录</a></li>
+            <li><a class="js-register" onclick="show_reg_frm()">注册</a></li>
+        </ul>
+      <ul class="nav navbar-nav navbar-right transition">
+
+                        <li class="login-link-box">
+                            <span id="display_name"  {% if is_login %}is_login{% endif %}>用户：{{ user.display_name }}</span>
+</li>
+      <div class="user_menu ">
+                    <a>设置</a>
+                    <a onclick="logout()">退出</a>
+                </div>
+        </ul>
+
+    </div>
+</header>
+
